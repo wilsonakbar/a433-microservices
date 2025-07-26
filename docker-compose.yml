@@ -1,0 +1,23 @@
+version: '2.4'
+
+services:
+  # Service untuk aplikasi Node.js (item-app)
+  item-app:
+    image: wilsonakbar/item-app:v1 # Ganti dengan nama image kamu
+    ports:
+      - "80:8080"  # Akses dari host:port 80 → container:port 8080
+    depends_on:
+      - item-db   # Tunggu hingga item-db siap
+    restart: unless-stopped  # Tambahan: selalu restart kecuali dihentikan manual
+
+  # Service untuk database MongoDB
+  item-db:
+    image: mongo:3
+    volumes:
+      - app-db:/data/db  # Menyimpan data secara persisten
+    restart: unless-stopped  # Tambahan restart policy
+
+volumes:
+  # Volume named "app-db" untuk menyimpan data MongoDB
+  app-db:
+
