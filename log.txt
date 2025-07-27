@@ -173,3 +173,5 @@ item-app-1  | NODE_ENV: production
 item-db-1   | 2025-07-27T04:10:56.948+0000 I NETWORK  [listener] connection accepted from 172.18.0.3:54140 #1 (1 connection now open)
 item-db-1   | 2025-07-27T04:10:56.960+0000 I NETWORK  [conn1] received client metadata from 172.18.0.3:54140 conn1: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "6.10.14-linuxkit" }, platform: "Node.js v14.21.3, LE, mongodb-core: 2.1.20" }
 item-app-1  | Connected to database
+Gracefully stopping... (press Ctrl+C again to force)
+unexpected EOF
