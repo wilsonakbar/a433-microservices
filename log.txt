@@ -1,0 +1,175 @@
+time="2025-07-27T11:10:03+07:00" level=warning msg="/Users/we/a433-microservices/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+#1 [internal] load local bake definitions
+#1 reading from stdin 376B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 557B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:14
+#3 ...
+
+#4 [auth] library/node:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:14
+#3 DONE 8.5s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 88B done
+#5 DONE 0.0s
+
+#6 [1/4] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa
+#6 resolve docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa 0.0s done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 16.83kB 0.0s done
+#7 DONE 0.0s
+
+#8 [2/4] WORKDIR /app
+#8 CACHED
+
+#9 [3/4] COPY . .
+#9 DONE 0.1s
+
+#10 [4/4] RUN npm install --production --unsafe-perm && npm run build
+#10 1.558 
+#10 1.558 > docker-software-delivery@1.0.0 preinstall /app
+#10 1.558 > npx npm-force-resolutions
+#10 1.558 
+#10 6.172 npx: installed 6 in 4.524s
+#10 14.88 npm WARN read-shrinkwrap This version of npm is compatible with lockfileVersion@1, but package-lock.json was generated for lockfileVersion@2. I'll try to do my best with it!
+#10 30.81 added 469 packages from 332 contributors and audited 660 packages in 29.285s
+#10 31.08 
+#10 31.08 9 packages are looking for funding
+#10 31.08   run `npm fund` for details
+#10 31.08 
+#10 31.08 found 132 vulnerabilities (26 low, 35 moderate, 59 high, 12 critical)
+#10 31.08   run `npm audit fix` to fix them, or `npm audit` for details
+#10 31.40 
+#10 31.40 > docker-software-delivery@1.0.0 build /app
+#10 31.40 > node ./node_modules/gulp/bin/gulp.js
+#10 31.40 
+#10 31.83 [04:10:44] Using gulpfile /app/gulpfile.js
+#10 31.84 [04:10:44] Starting 'scripts'...
+#10 36.66 [04:10:49] Finished 'scripts' after 4.82 s
+#10 36.66 [04:10:49] Starting 'default'...
+#10 36.66 [04:10:49] Finished 'default' after 25 μs
+#10 DONE 36.8s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 2.4s done
+#11 exporting manifest sha256:a0266ecf6d29d2b445595bd164f7bbb3e99cb0141d8385d7fdebd69b79efdcaa 0.0s done
+#11 exporting config sha256:808fc6dee5894651c8eaefa74af384d96246a8669958fe73da0e3073ff68bc30 done
+#11 exporting attestation manifest sha256:2f58568e5d7dfa7643b5876cd95e0215249b5798ddc5129f2340c80567c526d6 0.0s done
+#11 exporting manifest list sha256:2e4fd7b5e548f1ae60c2ac2c811e5aa132413d8a917210615a0653bf73949bc1 done
+#11 naming to docker.io/library/a433-microservices-item-app:latest done
+#11 unpacking to docker.io/library/a433-microservices-item-app:latest
+#11 unpacking to docker.io/library/a433-microservices-item-app:latest 2.0s done
+#11 DONE 4.5s
+
+#12 resolving provenance for metadata file
+#12 DONE 0.0s
+ item-app  Built
+ Network a433-microservices_default  Creating
+ Network a433-microservices_default  Created
+ Container a433-microservices-item-db-1  Creating
+ Container a433-microservices-item-db-1  Created
+ Container a433-microservices-item-app-1  Creating
+ Container a433-microservices-item-app-1  Created
+Attaching to item-app-1, item-db-1
+item-db-1   | 2025-07-27T04:10:55.147+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=3a95b7831012
+item-db-1   | 2025-07-27T04:10:55.150+0000 I CONTROL  [initandlisten] db version v3.6.23
+item-db-1   | 2025-07-27T04:10:55.150+0000 I CONTROL  [initandlisten] git version: d352e6a4764659e0d0350ce77279de3c1f243e5c
+item-db-1   | 2025-07-27T04:10:55.150+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+item-db-1   | 2025-07-27T04:10:55.150+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+item-db-1   | 2025-07-27T04:10:55.150+0000 I CONTROL  [initandlisten] modules: none
+item-db-1   | 2025-07-27T04:10:55.150+0000 I CONTROL  [initandlisten] build environment:
+item-db-1   | 2025-07-27T04:10:55.150+0000 I CONTROL  [initandlisten]     distmod: ubuntu1604
+item-db-1   | 2025-07-27T04:10:55.150+0000 I CONTROL  [initandlisten]     distarch: x86_64
+item-db-1   | 2025-07-27T04:10:55.150+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+item-db-1   | 2025-07-27T04:10:55.150+0000 I CONTROL  [initandlisten] options: { net: { bindIpAll: true } }
+item-db-1   | 2025-07-27T04:10:55.153+0000 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+item-db-1   | 2025-07-27T04:10:55.153+0000 I STORAGE  [initandlisten] 
+item-db-1   | 2025-07-27T04:10:55.153+0000 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+item-db-1   | 2025-07-27T04:10:55.153+0000 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+item-db-1   | 2025-07-27T04:10:55.153+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3406M,cache_overflow=(file_max=0M),session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),compatibility=(release="3.0",require_max="3.0"),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+item-app-1  | 
+item-app-1  | > docker-software-delivery@1.0.0 start /app
+item-app-1  | > node ./bin/www
+item-app-1  | 
+item-app-1  | NODE_ENV: production
+item-app-1  | /app/node_modules/mongodb/lib/mongo_client.js:421
+item-app-1  |           throw err
+item-app-1  |           ^
+item-app-1  | 
+item-app-1  | AssertionError [ERR_ASSERTION]: null == Error [MongoError]: failed to connect to server [item-db:27017] on first connect [Error: connect ECONNREFUSED 172.18.0.2:27017
+item-app-1  |     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1159:16) {
+item-app-1  |   name: 'MongoError'
+item-app-1  | }]
+item-app-1  |     at Pool.<anonymous> (/app/node_modules/mongodb-core/lib/topologies/server.js:336:35)
+item-app-1  |     at Pool.emit (events.js:400:28)
+item-app-1  |     at Connection.<anonymous> (/app/node_modules/mongodb-core/lib/connection/pool.js:280:12)
+item-app-1  |     at Object.onceWrapper (events.js:520:26)
+item-app-1  |     at Connection.emit (e...
+item-app-1  |     at /app/app.js:24:10
+item-app-1  |     at connectCallback (/app/node_modules/mongodb/lib/mongo_client.js:527:5)
+item-app-1  |     at /app/node_modules/mongodb/lib/mongo_client.js:418:11
+item-app-1  |     at processTicksAndRejections (internal/process/task_queues.js:77:11) {
+item-app-1  |   generatedMessage: true,
+item-app-1  |   code: 'ERR_ASSERTION',
+item-app-1  |   actual: null,
+item-app-1  |   expected: Error [MongoError]: failed to connect to server [item-db:27017] on first connect [Error: connect ECONNREFUSED 172.18.0.2:27017
+item-app-1  |       at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1159:16) {
+item-app-1  |     name: 'MongoError'
+item-app-1  |   }]
+item-app-1  |       at Pool.<anonymous> (/app/node_modules/mongodb-core/lib/topologies/server.js:336:35)
+item-app-1  |       at Pool.emit (events.js:400:28)
+item-app-1  |       at Connection.<anonymous> (/app/node_modules/mongodb-core/lib/connection/pool.js:280:12)
+item-app-1  |       at Object.onceWrapper (events.js:520:26)
+item-app-1  |       at Connection.emit (events.js:400:28)
+item-app-1  |       at Socket.<anonymous> (/app/node_modules/mongodb-core/lib/connection/connection.js:189:49)
+item-app-1  |       at Object.onceWrapper (events.js:520:26)
+item-app-1  |       at Socket.emit (events.js:400:28)
+item-app-1  |       at emitErrorNT (internal/streams/destroy.js:106:8)
+item-app-1  |       at emitErrorCloseNT (internal/streams/destroy.js:74:3),
+item-app-1  |   operator: '=='
+item-app-1  | }
+item-app-1  | npm ERR! code ELIFECYCLE
+item-app-1  | npm ERR! errno 1
+item-app-1  | npm ERR! docker-software-delivery@1.0.0 start: `node ./bin/www`
+item-app-1  | npm ERR! Exit status 1
+item-app-1  | npm ERR! 
+item-app-1  | npm ERR! Failed at the docker-software-delivery@1.0.0 start script.
+item-app-1  | npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+item-app-1  | 
+item-app-1  | npm ERR! A complete log of this run can be found in:
+item-app-1  | npm ERR!     /root/.npm/_logs/2025-07-27T04_10_55_764Z-debug.log
+item-db-1   | 2025-07-27T04:10:56.241+0000 I STORAGE  [initandlisten] WiredTiger message [1753589456:241111][1:0x7f7713cb3a40], txn-recover: Main recovery loop: starting at 2/20096
+[Kitem-app-1 exited with code 0
+item-db-1   | 2025-07-27T04:10:56.379+0000 I STORAGE  [initandlisten] WiredTiger message [1753589456:379473][1:0x7f7713cb3a40], txn-recover: Recovering log 2 through 3
+item-db-1   | 2025-07-27T04:10:56.464+0000 I STORAGE  [initandlisten] WiredTiger message [1753589456:464519][1:0x7f7713cb3a40], txn-recover: Recovering log 3 through 3
+item-db-1   | 2025-07-27T04:10:56.519+0000 I STORAGE  [initandlisten] WiredTiger message [1753589456:519532][1:0x7f7713cb3a40], txn-recover: Set global recovery timestamp: 0
+item-db-1   | 2025-07-27T04:10:56.540+0000 I CONTROL  [initandlisten] 
+item-db-1   | 2025-07-27T04:10:56.540+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+item-db-1   | 2025-07-27T04:10:56.540+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+item-db-1   | 2025-07-27T04:10:56.540+0000 I CONTROL  [initandlisten] 
+item-db-1   | 2025-07-27T04:10:56.540+0000 I CONTROL  [initandlisten] 
+item-db-1   | 2025-07-27T04:10:56.540+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+item-db-1   | 2025-07-27T04:10:56.541+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+item-db-1   | 2025-07-27T04:10:56.541+0000 I CONTROL  [initandlisten] 
+item-db-1   | 2025-07-27T04:10:56.560+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+item-db-1   | 2025-07-27T04:10:56.562+0000 I NETWORK  [initandlisten] listening via socket bound to 0.0.0.0
+item-db-1   | 2025-07-27T04:10:56.562+0000 I NETWORK  [initandlisten] listening via socket bound to /tmp/mongodb-27017.sock
+item-db-1   | 2025-07-27T04:10:56.562+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+item-app-1  | 
+item-app-1  | > docker-software-delivery@1.0.0 start /app
+item-app-1  | > node ./bin/www
+item-app-1  | 
+item-app-1  | NODE_ENV: production
+item-db-1   | 2025-07-27T04:10:56.948+0000 I NETWORK  [listener] connection accepted from 172.18.0.3:54140 #1 (1 connection now open)
+item-db-1   | 2025-07-27T04:10:56.960+0000 I NETWORK  [conn1] received client metadata from 172.18.0.3:54140 conn1: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "6.10.14-linuxkit" }, platform: "Node.js v14.21.3, LE, mongodb-core: 2.1.20" }
+item-app-1  | Connected to database
