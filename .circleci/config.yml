@@ -38,7 +38,7 @@ jobs:
           name: Push image to Docker Hub
           command: |
             echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
-            docker push docker.io/your-dockerhub-username/karsajobs:latest
+            docker push docker.io/wilsonakbar/karsajobs:latest
 
 workflows:
   version: 2
