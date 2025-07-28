@@ -1,0 +1,50 @@
+version: 2.1
+
+jobs:
+  lint-dockerfile:
+    docker:
+      - image: alpine
+    steps:
+      - checkout
+      - run:
+          name: Install hadolint
+          command: |
+            apk add --no-cache curl
+            curl -L https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64 -o /usr/local/bin/hadolint
+            chmod +x /usr/local/bin/hadolint
+      - run:
+          name: Lint Dockerfile
+          command: hadolint Dockerfile
+
+  test-app:
+    docker:
+      - image: cimg/go:1.20
+    steps:
+      - checkout
+      - run:
+          name: Run Go unit tests
+          command: go test -v -short --count=1 $(go list ./...)
+
+  build-app-karsajobs:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: docker build -t docker.io/your-dockerhub-username/karsajobs:latest .
+      - run:
+          name: Push image to Docker Hub
+          command: |
+            echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
+            docker push docker.io/your-dockerhub-username/karsajobs:latest
+
+workflows:
+  version: 2
+  backend-ci:
+    jobs:
+      - lint-dockerfile
+      - test-app
+      - build-app-karsajobs
+
