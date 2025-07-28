@@ -33,7 +33,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker image
-          command: docker build -t docker.io/your-dockerhub-username/karsajobs:latest .
+          command: docker build -t docker.io/wilsonakbar/karsajobs:latest .
       - run:
           name: Push image to Docker Hub
           command: |
